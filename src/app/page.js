@@ -42,7 +42,7 @@ export default function BasePage() {
 
   return (
     <div className="w-full h-screen flex flex-col items-center">
-      <h2 className="text-2xl mt-4 font-medium uppercase">Navratna Golden Coupons</h2>
+      <h2 className="text-2xl mt-4 font-medium uppercase">Golden Navratna Coupons</h2>
       <div className="w-full max-w-3xl">
         <div className="my-3">
           <span className="text-sm font-medium">Date</span>

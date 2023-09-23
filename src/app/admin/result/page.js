@@ -51,7 +51,7 @@ export default function ResultPage() {
   return (
     <div className="w-full h-screen flex flex-col items-center">
       <h2 className="text-2xl mt-4 font-medium uppercase">
-        Navratna Golden Coupons
+        Golden Navratna Coupons
       </h2>
       <div className="w-full max-w-3xl">
         <div className="my-3">
