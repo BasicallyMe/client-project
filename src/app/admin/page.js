@@ -16,8 +16,8 @@ export default function AdminPage() {
     });
     if (res.status === "success") {
       setUser(res.user);
-      setDisableBtn(false);
     }
+    setDisableBtn(false);
   }
   return (
     <div className="h-screen bg-purple-400 flex flex-col items-center justify-center">
