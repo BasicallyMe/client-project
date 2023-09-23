@@ -1,4 +1,13 @@
-import { addDoc, collection, doc, deleteDoc, getDocs, query, where } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  deleteDoc,
+  getDocs,
+  query,
+  where,
+  orderBy,
+} from "firebase/firestore";
 
 import { db } from "./firebase";
 
@@ -15,7 +24,10 @@ export async function addResult(data) {
 export async function getResult(date) {
   try {
     const data = [];
-    const q = query(collection(db, "results"), where("date", "==", date));
+    const q = query(
+      collection(db, "results"), 
+      where("date", "==", date), 
+      orderBy('time', 'asc'));
     const snapshot = await getDocs(q);
     snapshot.forEach((doc) => {
       const obj = doc.data();
@@ -29,11 +41,11 @@ export async function getResult(date) {
 }
 
 export async function deleteResult(id) {
-    try {
-        await deleteDoc(doc(db, 'results', id));
-        return true;
-    } catch(err) {
-        console.log(err);
-        return false;
-    }
+  try {
+    await deleteDoc(doc(db, "results", id));
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
 }
