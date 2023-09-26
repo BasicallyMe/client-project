@@ -11,7 +11,15 @@ export default function RootLayout({ children }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-9QTNRHVRN8"
         ></script>
-        <script src="./index.js"></script>
+        <script>
+          {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QTNRHVRN8');
+`}
+        </script>
       </head>
       <body className="h-full bg-red-400">{children}</body>
     </html>
